@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Property cash-flow analysis | Realify Properties</title>
+<meta name="description" content="Live cash-flow calculator for a West Michigan rental property: Michigan investor taxes, reserves, financing and pass/fail against $200/door and 8% cash-on-cash.">
+<meta name="theme-color" content="#1E1E1E">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="property">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main">
+ <div id="prop-root">
+  <section class="page-hero" aria-labelledby="p-title">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Listings</a> <span aria-hidden="true">/</span> <span>Property analysis</span></nav>
+      <div class="prop-head">
+        <div>
+          <h1 id="p-title">Loading property…</h1>
+          <p class="addr" id="p-addr"></p>
+        </div>
+        <div class="price-tag"><div class="v money" id="p-price"></div><div class="k" id="p-price-sub"></div></div>
+      </div>
+      <div class="prop-badges" id="p-badges"></div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section aria-label="Key numbers"><div class="kpis" id="kpis" aria-live="polite"></div></section>
+
+    <div class="layout-2">
+      <!-- Left: the assumptions you can change -->
+      <aside aria-labelledby="assump-title">
+        <div class="panel sticky">
+          <h2 id="assump-title">Your assumptions</h2>
+          <p class="sub">Change anything — every number on this page updates instantly.</p>
+          <div class="segmented" id="presets" role="group" aria-label="Assumption presets">
+            <button type="button" data-preset="default" aria-pressed="true">Default</button>
+            <button type="button" data-preset="aggressive" aria-pressed="false">Aggressive</button>
+          </div>
+          <p class="small muted" id="preset-status" aria-live="polite" style="margin:10px 0 0"></p>
+          <div id="controls"></div>
+        </div>
+      </aside>
+
+      <!-- Right: results -->
+      <div>
+        <section class="panel" aria-labelledby="verdict-title">
+          <h2 id="verdict-title">Does it pass?</h2>
+          <p class="sub">Realify lists a property only if it clears <strong>both</strong> bars.</p>
+          <div id="verdict" aria-live="polite"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="bd-title">
+          <h2 id="bd-title">Monthly breakdown</h2>
+          <p class="sub" id="loan-line"></p>
+          <div class="chart-wrap" id="chart"></div>
+          <div class="legend" aria-hidden="true">
+            <span><i style="background:#3A3A3A"></i>Rent</span>
+            <span><i style="background:#F4A3BF"></i>Operating costs</span>
+            <span><i style="background:#ED135A"></i>Mortgage</span>
+            <span><i style="background:#0F7B4F"></i>Cash flow</span>
+          </div>
+          <div class="table-scroll" id="breakdown" style="margin-top:20px"></div>
+        </section>
+
+        <section class="callout" id="tax" aria-live="polite" style="margin-top:24px"></section>
+
+        <div id="warnings" style="margin-top:24px" hidden></div>
+
+        <section class="panel" aria-labelledby="rent-title" style="margin-top:24px">
+          <h2 id="rent-title">Where the rent numbers come from</h2>
+          <p class="sub">We use the unit’s current lease when the listing has one; otherwise HUD’s Fair Market Rent for the ZIP code and bedroom count. Override any unit in “Your assumptions.”</p>
+          <div class="table-scroll" id="rent-sources"></div>
+        </section>
+
+        <section class="panel" aria-labelledby="about-title">
+          <h2 id="about-title">About this property</h2>
+          <div class="media" id="p-media" style="position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;margin:12px 0 18px;background:#1E1E1E"></div>
+          <dl class="facts-list" id="p-facts"></dl>
+          <p id="p-remarks" style="margin-top:18px"></p>
+          <p class="attribution small muted" id="p-attrib"></p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="lead-title" id="contact">
+    <div class="container">
+      <div class="lead">
+        <div class="lead-inner">
+          <div>
+            <p class="eyebrow">Next step</p>
+            <h2 id="lead-title">Talk to Delcie about this property</h2>
+            <p class="lede">Get a second set of eyes on the numbers, the neighborhood and the building itself — before you make an offer.</p>
+            <ul class="lead-points">
+              <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg>Real rent comps and actual leases</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg>Parcel-level tax and rental-certification check</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg>Showings and offer strategy</li>
+            </ul>
+          </div>
+          <div id="lead-form"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+ </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="assets/config.js"></script>
+<script src="data/assumptions.js"></script>
+<script src="data/millage.js"></script>
+<script src="data/hud-rents.js"></script>
+<script src="data/mock-listings.js"></script>
+<script src="js/reso-adapter.js"></script>
+<script src="js/cashflow.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ui-leadform.js"></script>
+<script src="js/ui-property.js"></script>
+</body>
+</html>

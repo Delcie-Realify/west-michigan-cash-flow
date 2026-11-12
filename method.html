@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How We Calculate Cash Flow | Realify Properties</title>
+<meta name="description" content="Plain-English explanation of how Realify estimates rent, Michigan investor property tax, reserves, financing and cash flow for West Michigan rentals.">
+<meta name="theme-color" content="#1E1E1E">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="method">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main">
+  <section class="page-hero" aria-labelledby="m-title">
+    <div class="container">
+      <p class="eyebrow">Methodology</p>
+      <h1 id="m-title">How we calculate cash flow</h1>
+      <p class="lede">No black boxes. Here is every step, every default, and every source — the same math runs on every listing, and you can change any assumption on a property’s page.</p>
+      <p class="small" style="color:#9CA3AF;margin:0">Assumptions last reviewed <span id="as-of">—</span>.</p>
+    </div>
+  </section>
+
+  <div class="container section">
+    <div id="method-error"></div>
+    <div class="article-grid">
+      <nav class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">On this page</h2>
+        <ol>
+          <li><a href="#short">The short version</a></li>
+          <li><a href="#rent">1. Rent</a></li>
+          <li><a href="#reserves">2. Vacancy &amp; reserves</a></li>
+          <li><a href="#management">3. Management</a></li>
+          <li><a href="#tax">4. Michigan property tax</a></li>
+          <li><a href="#other">5. Insurance, utilities &amp; fees</a></li>
+          <li><a href="#financing">6. Financing</a></li>
+          <li><a href="#tests">7. The two tests</a></li>
+          <li><a href="#grades">8. Grades</a></li>
+          <li><a href="#presets">9. Presets</a></li>
+          <li><a href="#limits">Limitations</a></li>
+        </ol>
+      </nav>
+
+      <article class="prose">
+        <section id="short" aria-labelledby="short-h">
+          <h2 id="short-h" style="margin-top:0">The short version</h2>
+          <div class="formula">Rent
+ − vacancy
+ − repairs, capital reserves, management
+ − property tax (Michigan investor rate), insurance, HOA, utilities, fees
+ = Net operating income (NOI)
+ − mortgage payment
+ = Cash flow</div>
+          <p style="margin-top:16px">A listing makes our list only if it earns at least <strong><span data-a="minPerDoor" data-fmt="money"></span> per door per month</strong> <em>and</em> at least <strong><span data-a="minCashOnCash" data-fmt="pct"></span> cash-on-cash</strong> per year with our default assumptions.</p>
+        </section>
+
+        <section class="step" id="rent" aria-labelledby="rent-h">
+          <div class="n" aria-hidden="true">1</div>
+          <div>
+            <h2 id="rent-h">Rent</h2>
+            <p>For each unit we use, in order:</p>
+            <ol>
+              <li><strong>The current lease</strong>, when the listing reports one.</li>
+              <li><strong>HUD’s Small Area Fair Market Rent</strong> for the unit’s ZIP code and bedroom count (<span id="hud-year">—</span>).</li>
+              <li><strong>HUD’s county-wide Fair Market Rent</strong> when the ZIP isn’t covered.</li>
+            </ol>
+            <p>HUD Fair Market Rents are a conservative, public, verifiable benchmark (roughly the 40th percentile of local rents). They’re not a rent opinion — a renovated unit may rent for more, a tired one for less. You can type your own rent for any unit. <a id="hud-link" href="https://www.huduser.gov/portal/datasets/fmr.html" rel="noopener">HUD’s Fair Market Rent data</a>.</p>
+          </div>
+        </section>
+
+        <section class="step" id="reserves" aria-labelledby="res-h">
+          <div class="n" aria-hidden="true">2</div>
+          <div>
+            <h2 id="res-h">Vacancy &amp; reserves</h2>
+            <p>We set aside a share of the gross rent every month, even when nothing is broken:</p>
+            <ul>
+              <li><strong>Vacancy: <span data-a="vacancyPct" data-fmt="pct"></span></strong> — empty months between tenants and unpaid rent.</li>
+              <li><strong>Repairs: <span data-a="repairsPct" data-fmt="pct"></span></strong> — the everyday leaky faucet and broken window.</li>
+              <li><strong>Capital reserves: <span data-a="capexPct" data-fmt="pct"></span></strong> — saving for the big replacements: roof, furnace, water heater.</li>
+            </ul>
+            <p>These are lean defaults suited to a solid, hands-on owner. Older West Michigan housing often deserves more — you can raise any of them on a property’s page, and we flag pre-1940 and pre-1978 homes.</p>
+          </div>
+        </section>
+
+        <section class="step" id="management" aria-labelledby="mgmt-h">
+          <div class="n" aria-hidden="true">3</div>
+          <div>
+            <h2 id="mgmt-h">Management</h2>
+            <p>Our default assumes you <strong>manage the property yourself</strong> (0%). Flip the “Hire a property manager” switch on any property to add a professional manager at <strong><span data-a="proManagementPct" data-fmt="pct"></span> of collected rent</strong>, plus a leasing fee of about <strong><span data-a="proLeasingFeeMonths" data-fmt="num"></span> of a month’s rent</strong> each time a new tenant signs (spread over a typical <span data-a="averageTenancyYears" data-fmt="num"></span>-year tenancy).</p>
+            <p>Out-of-state? Plan on professional management — and judge the deal with it turned on.</p>
+          </div>
+        </section>
+
+        <section class="step" id="tax" aria-labelledby="tax-h">
+          <div class="n" aria-hidden="true">4</div>
+          <div>
+            <h2 id="tax-h">Michigan property tax — the big surprise</h2>
+            <p>The tax on a listing is what the <em>seller</em> pays, and in Michigan it’s usually far lower than what an investor will pay. Two reasons:</p>
+            <ul>
+              <li><strong>Uncapping.</strong> While someone owns a home, its taxable value can only rise slowly. When it sells, taxable value resets (“uncaps”) to about <span data-a="sevRatio" data-fmt="pct"></span> of the sale price.</li>
+              <li><strong>No homestead exemption.</strong> Owner-occupants get the Principal Residence Exemption from roughly 18 school operating mills. Rentals don’t, so they pay the higher <em>non-homestead</em> rate.</li>
+            </ul>
+            <div class="formula">Investor tax per year ≈ price × <span data-a="sevRatio" data-fmt="pct"></span> × rental millage ÷ 1,000</div>
+            <div class="formula" id="tax-example" style="margin-top:10px"></div>
+            <p style="margin-top:14px">Millage comes from the <span id="mill-year">—</span> county millage tables for each city or township we cover, with a county-wide fallback when a city isn’t in our table. Rates differ by school district, and a mailing address may sit in a different township — always confirm the parcel.</p>
+          </div>
+        </section>
+
+        <section class="step" id="other" aria-labelledby="other-h">
+          <div class="n" aria-hidden="true">5</div>
+          <div>
+            <h2 id="other-h">Insurance, utilities &amp; fees</h2>
+            <ul>
+              <li><strong>Insurance</strong> (landlord policy): about <span data-a="insurance.baseAnnual" data-fmt="money"></span> + <span data-a="insurance.pctOfPrice" data-fmt="pct"></span> of the price + <span data-a="insurance.perExtraUnitAnnual" data-fmt="money"></span> per extra unit, per year. Condos and townhomes pay a fraction since the association insures the building. Get a real quote.</li>
+              <li><strong>Owner-paid utilities</strong>: <span data-a="ownerPaidUtilitiesPerUnitMonthly.single_family" data-fmt="money"></span> for single-family homes and condos (tenant pays); <span data-a="ownerPaidUtilitiesPerUnitMonthly.duplex" data-fmt="money"></span> per unit per month for 2–4 unit buildings, where the owner often pays shared water and sewer.</li>
+              <li><strong>Rental registration &amp; inspections</strong>: <span data-a="otherPerUnitMonthly" data-fmt="money"></span> per unit per month.</li>
+              <li><strong>HOA dues</strong> come straight from the listing.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="step" id="financing" aria-labelledby="fin-h">
+          <div class="n" aria-hidden="true">6</div>
+          <div>
+            <h2 id="fin-h">Financing</h2>
+            <ul>
+              <li><strong><span data-a="downPaymentPct" data-fmt="pct"></span> down</strong> on a conventional investment-property loan (the usual minimum for 2–4 units).</li>
+              <li><strong><span data-a="interestRate" data-fmt="pct3"></span> interest</strong>, <span data-a="termYears" data-fmt="num"></span>-year fixed. This is a market estimate, not a lender quote.</li>
+              <li><strong>Closing costs: <span data-a="closingCostPct" data-fmt="pct"></span></strong> of the price.</li>
+              <li>Mortgage insurance is added only if you put less than 20% down.</li>
+            </ul>
+            <p><strong>Cash needed</strong> = down payment + closing costs (+ any rehab budget). <strong>Cash-on-cash</strong> = one year of cash flow ÷ cash needed.</p>
+          </div>
+        </section>
+
+        <section class="step" id="tests" aria-labelledby="tests-h">
+          <div class="n" aria-hidden="true">7</div>
+          <div>
+            <h2 id="tests-h">The two tests</h2>
+            <p>A property passes only when it clears <strong>both</strong>:</p>
+            <ul>
+              <li><strong><span data-a="minPerDoor" data-fmt="money"></span> per door per month</strong> — a cushion for the surprises every landlord gets.</li>
+              <li><strong><span data-a="minCashOnCash" data-fmt="pct"></span> cash-on-cash</strong> — a fair return on the money you actually put in.</li>
+            </ul>
+            <p>Why both? A big down payment can make $/door look great while your cash earns little; a small down payment can show a strong percentage on a deal with no margin for error.</p>
+          </div>
+        </section>
+
+        <section class="step" id="grades" aria-labelledby="grades-h">
+          <div class="n" aria-hidden="true">8</div>
+          <div>
+            <h2 id="grades-h">Grades</h2>
+            <ul id="grades-list" style="list-style:none;padding:0"></ul>
+          </div>
+        </section>
+
+        <section class="step" id="presets" aria-labelledby="presets-h">
+          <div class="n" aria-hidden="true">9</div>
+          <div>
+            <h2 id="presets-h">Presets</h2>
+            <p>Switch presets on the listings page to re-score everything at once, or on a property page to start from a different set of assumptions.</p>
+            <ul>
+              <li><strong>Default</strong> — Realify’s standard underwriting described on this page.</li>
+              <li><strong>Aggressive</strong> — 20% down and lighter reserves, for experienced hands-on investors. Note: 2–4 unit buildings usually need 25% down.</li>
+            </ul>
+            <div class="table-scroll" id="preset-table"></div>
+          </div>
+        </section>
+
+        <section id="limits" aria-labelledby="limits-h" style="border-top:1px solid var(--line);padding-top:28px;margin-top:8px">
+          <h2 id="limits-h" style="margin-top:0">Limitations — please read</h2>
+          <div class="notice notice-warn">
+            <ul style="margin:0">
+              <li><strong>All listings currently shown are hypothetical sample data.</strong> They demonstrate the calculator and are not properties for sale.</li>
+              <li>Every figure is an <strong>estimate</strong>. Actual rents, taxes, insurance, repairs and loan terms will differ.</li>
+              <li>We don’t inspect properties. Condition, deferred maintenance, rental-certification requirements and lead-paint rules can change the numbers dramatically.</li>
+              <li>Cash flow ignores appreciation, loan paydown and income-tax effects (depreciation, etc.).</li>
+              <li>Condo and townhome associations may limit or prohibit rentals — check the bylaws.</li>
+              <li>This is <strong>not financial, tax, or legal advice</strong>. Talk to a lender, an insurance agent, a tax professional and an attorney before you buy.</li>
+            </ul>
+          </div>
+          <p style="margin-top:24px"><a class="btn btn-primary" href="about.html#contact">Questions? Talk to Delcie</a></p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="assets/config.js"></script>
+<script src="data/assumptions.js"></script>
+<script src="data/millage.js"></script>
+<script src="data/hud-rents.js"></script>
+<script src="data/mock-listings.js"></script>
+<script src="js/reso-adapter.js"></script>
+<script src="js/cashflow.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ui-method.js"></script>
+</body>
+</html>

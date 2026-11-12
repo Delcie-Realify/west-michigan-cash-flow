@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>West Michigan Cash-Flow Rentals | Realify Properties</title>
+<meta name="description" content="West Michigan rental properties screened for real cash flow — Michigan-specific taxes, honest reserves, and every number shown. Kent, Ottawa, Allegan and Muskegon counties.">
+<meta name="theme-color" content="#1E1E1E">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="listings">
+<a class="skip-link" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <p class="eyebrow">Kent · Ottawa · Allegan · Muskegon</p>
+      <h1 id="hero-title">West Michigan rentals that <em>actually</em> cash flow.</h1>
+      <p class="lede">Every listing is run through the same honest math — real Michigan rental taxes, real reserves, real financing — and only the deals that clear <span id="hero-door">$200</span> a door and <span id="hero-coc">8%</span> cash-on-cash make the cut.</p>
+      <div class="hero-stats" id="hero-stats" aria-live="polite">
+        <div class="hero-stat"><div class="v">—</div><div class="k">Loading…</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="filters" aria-label="Filter and sort listings">
+      <div class="filters-grid">
+        <div class="field"><label for="f-county">County</label><select id="f-county"><option value="">All counties</option></select></div>
+        <div class="field"><label for="f-city">City</label><select id="f-city"><option value="">All cities</option></select></div>
+        <div class="field"><label for="f-type">Property type</label><select id="f-type"><option value="">All types</option></select></div>
+        <div class="field span-2">
+          <span class="label" id="f-price-label">Price range</span>
+          <div class="price-pair" role="group" aria-labelledby="f-price-label">
+            <input id="f-price-min" type="number" inputmode="numeric" min="0" step="10000" placeholder="No min" aria-label="Minimum price in dollars">
+            <span aria-hidden="true">–</span>
+            <input id="f-price-max" type="number" inputmode="numeric" min="0" step="10000" placeholder="No max" aria-label="Maximum price in dollars">
+          </div>
+        </div>
+        <div class="field"><label for="f-sort">Sort by</label>
+          <select id="f-sort">
+            <option value="coc">Best cash-on-cash</option>
+            <option value="perdoor">Best cash flow per door</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="newest">Newest listings</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-beds">Min. bedrooms</label>
+          <select id="f-beds"><option value="0">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option><option value="5">5+</option><option value="6">6+</option></select>
+        </div>
+        <div class="field"><label for="f-units">Min. units</label>
+          <select id="f-units"><option value="0">Any</option><option value="2">2+</option><option value="3">3+</option><option value="4">4</option></select>
+        </div>
+      </div>
+      <div class="filters-row">
+        <div class="group">
+          <label class="switch"><input type="checkbox" id="f-pass" checked><span class="track" aria-hidden="true"></span>Only show properties that pass</label>
+          <button type="button" class="link-btn" id="f-reset">Reset filters</button>
+        </div>
+        <div class="group">
+          <span class="label" id="preset-label">Assumptions</span>
+          <div class="segmented" id="f-presets" role="group" aria-labelledby="preset-label">
+            <button type="button" data-preset="default" aria-pressed="true">Default</button>
+            <button type="button" data-preset="aggressive" aria-pressed="false">Aggressive</button>
+          </div>
+          <a class="small" href="method.html#presets">What’s the difference?</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="results-head">
+      <h2 id="results-title">Properties that pass</h2>
+      <p class="muted small" id="results-count" aria-live="polite"></p>
+    </div>
+    <div class="cards" id="cards">
+      <div class="loading" style="grid-column:1/-1"><div class="spinner"></div>Crunching the numbers…</div>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="lead-title">
+    <div class="container">
+      <div class="lead">
+        <div class="lead-inner">
+          <div>
+            <p class="eyebrow">Work with a local</p>
+            <h2 id="lead-title">Don’t see the right deal? Delcie hears about them first.</h2>
+            <p class="lede">Tell her what you’re looking for and she’ll watch the market for you — including new listings and price drops that fit your numbers.</p>
+            <ul class="lead-points">
+              <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg>Custom search for your budget and return goals</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg>Out-of-state investors welcome</li>
+              <li><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z"/></svg>Straight answers on taxes, rents and condition</li>
+            </ul>
+          </div>
+          <div id="lead-form"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<!-- Settings, then data + engine (order matters), then page scripts -->
+<script src="assets/config.js"></script>
+<script src="data/assumptions.js"></script>
+<script src="data/millage.js"></script>
+<script src="data/hud-rents.js"></script>
+<script src="data/mock-listings.js"></script>
+<script src="js/reso-adapter.js"></script>
+<script src="js/cashflow.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ui-leadform.js"></script>
+<script src="js/ui-listings.js"></script>
+<script>RealifyLeadForm.mount(document.getElementById("lead-form"), {});</script>
+</body>
+</html>

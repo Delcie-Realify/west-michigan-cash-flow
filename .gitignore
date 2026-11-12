@@ -1,0 +1,19 @@
+# --- Never upload secrets (MLS API keys, passwords) ---
+.env
+.env.*
+*.key
+*.pem
+secrets/
+config.local.*
+
+# --- Never upload raw MLS data (license restrictions) ---
+data/raw/
+data/mls/
+*.mls.json
+
+# --- Private working files (not part of the public website) ---
+.claude/
+Grand Rapids cash flow rentals.md
+
+# --- Mac system files ---
+.DS_Store
